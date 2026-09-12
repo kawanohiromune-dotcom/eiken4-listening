@@ -1,21 +1,15 @@
 {
-  "name": "英検4級 リスニング 15分トレーニング",
-  "short_name": "英検4級 15分",
-  "start_url": "./index.html",
+  "name": "SOUND QUEST - English Listening",
+  "short_name": "SOUND QUEST",
+  "description": "英検4級向け 15分リスニングトレーニング",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "landscape",
-  "background_color": "#111936",
-  "theme_color": "#111936",
+  "background_color": "#0b1831",
+  "theme_color": "#159fe9",
   "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 <meta name="theme-color" content="#111936" />
 <link rel="manifest" href="manifest.webmanifest" />
-<title>英検4級 リスニング 15分トレーニング v7</title>
+<title>SOUND QUEST - English Listening</title>
 <style>
 :root{--navy:#111936;--panel:#172348;--gold:#ffd85a;--white:#fff;--muted:#b8c2da;--ok:#3ddc97;--ng:#ff7070;--ink:#0d1426}
 *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;background:var(--navy);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI",Meiryo,sans-serif;color:#fff;overflow:hidden;overscroll-behavior:none}
@@ -63,11 +63,49 @@ footer{min-height:0;height:auto;display:grid;grid-template-columns:auto minmax(0
  .printHead{border-bottom:3px solid #244a91;padding-bottom:4mm;margin-bottom:4mm}.printHead h1{font-size:20pt;margin:0;color:#244a91}.printMeta{font-size:10pt;margin-top:2mm;display:flex;gap:8mm}.printSummary{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:4mm 0}.printSummary div{border:1px solid #b9c4d8;border-radius:2mm;padding:2.5mm;text-align:center}.printSummary b{display:block;font-size:16pt;color:#244a91}.printSummary span{font-size:8.5pt}
  .printTitle{font-size:13pt;margin:4mm 0 2mm;border-left:4mm solid #ffd85a;padding-left:2mm}.weakPrintGrid{display:grid;grid-template-columns:1fr 1fr;gap:3mm}.weakCard{break-inside:avoid;border:1px solid #b9c4d8;border-radius:2mm;padding:3mm}.weakCard h3{margin:0 0 1.5mm;font-size:10.5pt;color:#244a91}.weakCard .qline{font-size:8.8pt;font-weight:700;margin-bottom:1.5mm}.weakCard dl{display:grid;grid-template-columns:18mm 1fr;gap:.8mm 1.5mm;margin:0;font-size:8.5pt}.weakCard dt{font-weight:900;color:#7a6500}.weakCard dd{margin:0}.printFoot{margin-top:4mm;padding-top:2mm;border-top:1px solid #bbb;font-size:8pt;color:#555;text-align:right}
 }
+
+/* ===== SOUND QUEST v8 : voxel game theme ===== */
+:root{--wood1:#6b3618;--wood2:#3b1d0c;--sky:#25a9ef;--grass:#43b047;--questBlue:#087be6;--questGold:#ffd32f}
+#app{position:relative;isolation:isolate;background:
+ linear-gradient(rgba(5,20,50,.16),rgba(5,20,50,.22)),
+ url("voxel-bg.jpg") center/cover no-repeat fixed!important}
+#app::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(8,20,42,.22),rgba(8,20,42,.02) 25%,rgba(8,20,42,.02) 75%,rgba(8,20,42,.22))}
+header{gap:12px}
+.brand{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;overflow:visible!important}
+.soundLogo{display:inline-grid;grid-template-columns:auto auto;grid-template-rows:auto auto;align-items:end;column-gap:4px;line-height:.8;padding:4px 16px 7px 48px;position:relative;background:linear-gradient(#7a421f,#49220e);border:3px solid #2a1409;border-radius:8px;box-shadow:inset 0 2px 0 #a66a36,0 4px 0 rgba(0,0,0,.4);transform:skew(-1deg);text-shadow:2px 3px 0 #10223b,-1px -1px 0 #fff}
+.soundLogo::before{content:"🎧";position:absolute;left:8px;top:50%;transform:translateY(-56%);font-size:clamp(28px,4vw,55px);filter:drop-shadow(2px 3px 0 #13284a)}
+.soundLogo .soundWord,.soundLogo .questWord{font-family:Impact,"Arial Black",system-ui,sans-serif;font-style:normal;letter-spacing:.04em;font-size:clamp(24px,4.2vw,48px);font-weight:1000;line-height:.72}
+.soundLogo .soundWord{color:#19d9ff}.soundLogo .questWord{color:#ffc32e}
+.soundLogo small{grid-column:1/3;margin-top:5px;padding-top:3px;border-top:2px solid rgba(255,255,255,.28);font-size:clamp(8px,1.25vw,13px);line-height:1;color:#fff;letter-spacing:.08em;text-shadow:1px 2px 0 #000;text-align:center}
+.counter{gap:6px;background:linear-gradient(#75401e,#48230f);border:3px solid #2b150a;border-radius:9px;padding:5px 10px;box-shadow:inset 0 2px 0 #a66a36,0 4px 0 rgba(0,0,0,.38)}
+.counter .num{color:#ffe233!important;font-family:Impact,"Arial Black",sans-serif;text-shadow:2px 3px 0 #321500!important}.counter .meta{color:#fff;text-shadow:1px 2px 0 #000}
+.card{background:rgba(18,42,64,.46)!important;border:3px solid #f4dfaf!important;border-radius:8px!important;box-shadow:inset 0 0 0 4px rgba(83,48,20,.55),inset 0 0 28px rgba(0,0,0,.18),0 7px 0 rgba(35,18,7,.48)!important;backdrop-filter:blur(1.5px)}
+.stageLabel{left:12px!important;top:7px!important;background:linear-gradient(#75401e,#4a250f);border:2px solid #2d1509;border-radius:5px;padding:5px 11px;color:#ffe33d!important;text-shadow:1px 2px 0 #000;box-shadow:inset 0 1px 0 #a96c38,0 3px 0 rgba(0,0,0,.35)}
+.answerCue{border-radius:5px!important;background:linear-gradient(#ffe768,#f1c91f)!important;border:3px solid #9b7410!important;box-shadow:inset 0 2px 0 rgba(255,255,255,.55),0 4px 0 rgba(78,51,0,.45)!important;color:#10254a!important;text-shadow:0 1px 0 #fff;font-size:clamp(15px,2.1vw,23px)!important}
+.choiceGrid{padding-top:28px!important;gap:8px!important}
+.choice{border-radius:5px!important;border:3px solid #3e2918!important;background:linear-gradient(#fff,#f8f8f3)!important;box-shadow:inset 0 0 0 2px #eee0c7,0 5px 0 rgba(36,21,11,.75)!important;transition:transform .08s ease,filter .15s ease}
+.choice.ready{cursor:pointer}.choice.ready:hover{filter:brightness(1.03)}.choice.ready:active{transform:translateY(3px) scale(.995)!important;box-shadow:inset 0 0 0 2px #eee0c7,0 2px 0 rgba(36,21,11,.75)!important}
+.choice .n{display:grid;place-items:center;min-width:1.18em;aspect-ratio:1;border-radius:5px;background:linear-gradient(#1788ef,#075fc8);color:#fff!important;text-shadow:1px 2px 0 #073575;border:2px solid #0552aa;box-shadow:inset 0 2px 0 rgba(255,255,255,.25)}
+.choice .en{color:#10264c;font-weight:950!important}.choice .j{color:#6d5410!important}
+.btn{border-radius:5px!important;border:2px solid #0a376f!important;box-shadow:inset 0 2px 0 rgba(255,255,255,.22),0 4px 0 rgba(0,0,0,.45)!important;background:linear-gradient(#1388ec,#0764c8)!important;color:#fff!important;text-shadow:1px 2px 0 #083f7d}
+.btn.primary{background:linear-gradient(#ffe84b,#ffc51f)!important;color:#10264c!important;border-color:#a77b00!important;text-shadow:0 1px 0 #fff}
+.btn:not(:disabled):active{transform:translateY(3px);box-shadow:inset 0 2px 0 rgba(255,255,255,.2),0 1px 0 rgba(0,0,0,.45)!important}
+.btn:disabled{filter:grayscale(.6);opacity:.55!important}
+.footLeft,.footRight{gap:10px!important}.centerHint{color:#fff!important;text-shadow:1px 2px 0 #000}
+.bigText,.questionText{color:#fff;text-shadow:2px 3px 0 rgba(0,0,0,.7)}.jp,.questionJp{color:#ffe13c!important;text-shadow:1px 2px 0 #000}.speaker{border-radius:5px!important;box-shadow:0 3px 0 rgba(0,0,0,.35)}
+.settingsBox{border:5px solid #6d3b1c;border-radius:8px!important;box-shadow:0 8px 0 rgba(0,0,0,.45)}
+.rotate{background:linear-gradient(rgba(6,20,43,.46),rgba(4,13,31,.66)),url("voxel-rotate-bg.jpg") center/cover no-repeat!important}
+.rotateInner{display:grid;place-items:center;gap:6px;text-shadow:2px 3px 0 #000}.rotateInner>span{font-size:72px!important;margin:2px 0 4px!important;filter:drop-shadow(0 4px 0 rgba(0,0,0,.38))}.rotateInner>div:not(.miniLogo){font-size:clamp(25px,5.3vw,42px);font-weight:1000}.rotateInner>small{font-size:clamp(15px,3.1vw,22px)!important;color:#fff!important;font-weight:850}
+.miniLogo{display:grid;line-height:.8;background:linear-gradient(#75401e,#48230f);border:3px solid #2b150a;border-radius:7px;padding:8px 16px;box-shadow:0 4px 0 rgba(0,0,0,.45);margin-bottom:6px}.miniLogo b{color:#1dd9ff;font-family:Impact,"Arial Black",sans-serif;font-size:clamp(26px,7vw,52px)}.miniLogo strong{color:#ffc52e;font-family:Impact,"Arial Black",sans-serif;font-size:clamp(32px,8vw,62px)}.miniLogo small{color:#fff;font-size:12px;letter-spacing:.08em;margin-top:6px}
+@media (orientation:landscape) and (max-height:500px){
+ header{height:56px!important}.soundLogo{padding:3px 11px 6px 39px}.soundLogo::before{font-size:34px}.soundLogo .soundWord,.soundLogo .questWord{font-size:28px}.soundLogo small{font-size:8px;margin-top:4px}.counter{padding:3px 8px}.counter .num{font-size:36px!important}.counter .meta{font-size:11px!important}.choiceGrid{padding-top:25px!important}.choice{padding:5px 9px!important}.stageLabel{font-size:10px!important;padding:4px 8px!important}.answerCue{margin-top:6px!important;padding:5px 14px!important}.btn{font-size:14px!important}
+}
+
 </style>
 </head>
 <body>
 <div id="app">
-<header><div class="brand">英検4級 リスニング 15分トレーニング</div><div class="counter"><div class="num" id="qnum">01/15</div><div class="meta"><div id="round">1回目</div><div id="phaseName">まず聞く</div></div></div></header>
+<header><div class="brand"><div class="soundLogo"><span class="soundWord">SOUND</span><span class="questWord">QUEST</span><small>ENGLISH LISTENING</small></div></div><div class="counter"><div class="num" id="qnum">Q01</div><div class="meta"><div id="round">残り</div><div id="phaseName">15:00</div></div></div></header>
 <main><section class="card" id="card"></section></main>
 <footer>
   <div class="footLeft"><button class="btn ghost" id="settingsBtn">⚙︎ 音声・効果音</button><button class="btn ghost" id="replayBtn">↻ もう一度</button></div>
@@ -75,7 +113,7 @@ footer{min-height:0;height:auto;display:grid;grid-template-columns:auto minmax(0
   <div class="footRight"><button class="btn" id="prevBtn">← 戻る</button><button class="btn primary" id="nextBtn">次へ →</button></div>
 </footer>
 </div>
-<div class="rotate"><div><span>↻</span>iPhoneを横向きにしてください<br><small style="font-size:16px;color:#b8c2da">このアプリは横画面専用です</small></div></div>
+<div class="rotate"><div class="rotateInner"><div class="miniLogo"><b>SOUND</b><strong>QUEST</strong><small>ENGLISH LISTENING</small></div><span>↻</span><div>iPhoneを横向きにしてください</div><small>このアプリは横画面専用です</small></div></div>
 <div class="settings" id="settings"><div class="settingsBox"><h2>音声・効果音設定</h2><p class="note">英語音声は男女で別々に設定できます。効果音は英語音声の再生中には鳴らさず、操作・正誤確認だけに使います。</p><label>男性の声<select id="maleVoice"></select></label><label>女性の声<select id="femaleVoice"></select></label><label>速度<select id="rate"><option value="0.78">ゆっくり</option><option value="0.88" selected>本番寄り</option><option value="0.98">少し速め</option></select></label><label>効果音<select id="sfxOn"><option value="1" selected>ON</option><option value="0">OFF</option></select></label><label>効果音量<select id="sfxVol"><option value="0.35">小さめ</option><option value="0.55" selected>標準</option><option value="0.8">大きめ</option></select></label><div class="studyRecord" id="studyRecord"><h3>📊 学習記録</h3><div class="recordGrid"><div><b id="todayQ">0問</b><span>今日の問題数</span></div><div><b id="todayTime">0分</b><span>今日の学習時間</span></div><div><b id="todayAcc">—</b><span>今日の初回正答率</span></div></div><div class="weakBox" id="weakBox">まだ苦手データはありません。</div></div><div class="row"><button class="btn ghost" id="testSfx">効果音テスト</button><button class="btn ghost" id="testVoice">音声テスト</button><button class="btn primary" id="closeSettings">決定</button></div></div></div>
 <section id="printSheet" aria-hidden="true"></section>
 <script>
